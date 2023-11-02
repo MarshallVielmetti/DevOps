@@ -2,4 +2,4 @@
 
 sudo apt-get install curl
 
-curl -LJO https://raw.githubusercontent.com/MarshallVielmetti/DevOps/Menet/bootstrap.sh
+curl -LJO https://raw.githubusercontent.com/MarshallVielmetti/main/DevOps/Menet/bootstrap.sh
