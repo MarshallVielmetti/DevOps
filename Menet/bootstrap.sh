@@ -40,6 +40,8 @@ if [ ! -f ~/.ssh/id_ed25519 ] && [ ! -f ~/.ssh/id_rsa ]; then
     echo -e "${YELLOW_BOLD} Follow these instructions:"
     echo -e "${NC}https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account${NC}"
     echo -e "${YELLOW_BOLD} To add the SSH key to your github account.${NC}"
+
+    exit 1
 fi
 
 echo -e "${BLUE_BOLD}Updating and installing apt packages${NC}"
