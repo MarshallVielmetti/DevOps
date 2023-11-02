@@ -1,0 +1,18 @@
+- name: Oh-My-Zsh
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: ~/.oh-my-zsh
+    version: master
+  
+- name: Dotfiles
+  synchronize:
+    # The trailing slash is very important here
+    # It tells rsync to copy only the CONTENTS of the folder and not the folder itself
+    # This is vital to make sure this works will any usernames
+    src: files/home/
+    dest: ~/
+    recursive: true
+
+- name: Use ZSH as a default shell
+  become: true
+  command: chsh --shell /usr/bin/zsh {{ ansible_user_id }}
