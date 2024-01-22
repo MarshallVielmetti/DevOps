@@ -44,7 +44,7 @@ echo -e "${BLUE_BOLD}Updating and installing apt packages${NC}"
 sudo apt update
 sudo apt install -y git
 
-if [! -d "DevOps" ]; then
+if [ ! -d "DevOps" ]; then
     echo -e "${GREY_BOLD}Cloning DevOps repo ...${NC}"
     git clone git@github.com:MarshallVielmetti/DevOps.git
 fi
