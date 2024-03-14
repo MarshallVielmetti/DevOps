@@ -9,6 +9,10 @@ readonly GREY_BOLD='\033[1;30m'
 readonly YELLOW_BOLD='\033[1;33m'
 readonly NC='\033[0m'
 
+echo -e "${BLUE_BOLD}Updating and installing apt packages${NC}"
+sudo apt update
+sudo apt install -y git
+
 echo -e "${BLUE_BOLD}Ensuring SSH keys are set up ...${NC}"
 if [ ! -f ~/.ssh/id_ed25519 ] && [ ! -f ~/.ssh/id_rsa ]; then
     echo -e "${RED_BOLD}SSH Keys Not Setup${NC}"
@@ -36,17 +40,8 @@ if [ ! -f ~/.ssh/id_ed25519 ] && [ ! -f ~/.ssh/id_rsa ]; then
     echo -e "${YELLOW_BOLD} Follow these instructions:"
     echo -e "${NC}https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account${NC}"
     echo -e "${YELLOW_BOLD} To add the SSH key to your github account.${NC}"
-
+    
     exit 1
-fi
-
-echo -e "${BLUE_BOLD}Updating and installing apt packages${NC}"
-sudo apt update
-sudo apt install -y git
-
-if [ ! -d "DevOps" ]; then
-    echo -e "${GREY_BOLD}Cloning DevOps repo ...${NC}"
-    git clone git@github.com:MarshallVielmetti/DevOps.git
 fi
 
 echo -e "${BLUE_BOLD}All done!{NC}"
